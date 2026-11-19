@@ -2,29 +2,29 @@ package com.cybertron.autobot;
 
 public class Autobot {
 
-    private final String nome;
+    private final String name;
     private double energon;
-    private final int nivel;
+    private final int level;
 
-    public Autobot(String nome, double energon, int nivel) {
-        this.nome = nome;
+    public Autobot(String name, double energon, int level) {
+        this.name = name;
         this.energon = energon;
-        this.nivel = nivel;
+        this.level = level;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
     public double getEnergon() {
         return energon;
     }
 
-    public int getNivel() {
-        return nivel;
+    public int getLevel() {
+        return level;
     }
 
-    public void adicionarEnergon(double quantidade) {
-        this.energon += quantidade;
+    public void addEnergon(double quantity) {
+        this.energon += quantity;
     }
 }

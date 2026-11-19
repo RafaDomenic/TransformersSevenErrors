@@ -3,27 +3,27 @@ package com.cybertron.autobot;
 public class Main {
 
     public static void main(String[] args) {
-        GerenciadorAutobots gerenciador = new GerenciadorAutobots();
+        AdministerAutobots administer = new AdministerAutobots();
 
         Autobot optimus = new Autobot("Optimus Prime", 850.0, 10);
         Autobot bumblebee = new Autobot("Bumblebee", 320.0, 5);
         Autobot ratchet = new Autobot("Ratchet", 180.0, 7);
 
-        gerenciador.adicionar(optimus);
-        gerenciador.adicionar(bumblebee);
-        gerenciador.adicionar(ratchet);
+        administer.addition(optimus);
+        administer.addition(bumblebee);
+        administer.addition(ratchet);
 
-        System.out.println("Energon total: " + gerenciador.calcularEnergonTotal());
+        System.out.println("Total energon: " + administer.calculateTotalEnergon());
 
-        Autobot encontrado = gerenciador.buscar("Bumblebee");
-        if (encontrado != null) {
-            System.out.println("Encontrado: " + encontrado.getNome());
+        Autobot found = administer.search("Bumblebee");
+        if (found != null) {
+            System.out.println("Found: " + found.getName());
         } else {
-            System.out.println("Autobot nao encontrado");
+            System.out.println("Autobot not found.");
         }
 
-        gerenciador.reparar(ratchet);
-        System.out.println("Energon do Ratchet: " + ratchet.getEnergon());
-        System.out.println("Classificacao: " + gerenciador.classificar(ratchet));
+        administer.repair(ratchet);
+        System.out.println("Ratchet's Energon: " + ratchet.getEnergon());
+        System.out.println("Classification: " + administer.classify(ratchet));
     }
 }
